@@ -1,7 +1,7 @@
 
 # Calendar-Events
 
-An application to create, retrieve and manage event details
+An application to create and retrieve event details
 
 ## Steps to run the application:
 The application can be run with any of the below method:
