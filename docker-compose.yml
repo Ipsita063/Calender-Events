@@ -1,0 +1,15 @@
+version: '3.9'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: calender_events_app
+    volumes:
+      - ./app/db:/app/db  # Persist SQLite database in a mapped directory
+    ports:
+      - "8000:8000"  # Expose the container's port to the host
+
+volumes:
+  db:  # Declare the named volume

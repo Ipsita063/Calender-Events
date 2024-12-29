@@ -1,0 +1,32 @@
+Build and Run Application with docker-compose with Volumes Integrated for data persistence:
+-------------------------------------------------------------------------------------------
+1. Build the Docker image:
+    - docker-compose build
+2. Start the services:
+    - docker-compose up
+3. Access your application at http://localhost:8000.
+4. Persisted Data:
+    - The database file (app.db) should persist in app/db even after stopping the container with:
+        - docker-compose down
+
+Build and Run Application with dockerfile only:
+-----------------------------------------------
+1. Build the Docker Image
+    - Run the following command in the root of your project directory (where the Dockerfile is located):
+        - docker build -t calendar_events_app .
+2. Run the Docker Container
+    - Use this command to run the application:
+        - docker run -d --name calendar_events_app -p 8000:8000 calendar_events_app
+3. Verify the Application
+    - Check if the container is running:
+        - docker ps
+    - Open your browser and visit: http://localhost:8000.
+4. View Logs
+    - To see the logs of the running container, use:
+        - docker logs calendar_events_app
+5. Stop the Container
+    - To stop the container:
+        - docker stop calendar_events_app
+6. Remove the Container
+    - To remove the container after stopping it:
+        - docker rm calendar_events_app
