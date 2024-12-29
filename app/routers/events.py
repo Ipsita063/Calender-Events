@@ -74,17 +74,3 @@ async def get_event(event_id: int, db: Session = Depends(get_db)):
     if not db_event:
         raise HTTPException(status_code=404, detail=f"No Event Found With ID {event_id}")
     return db_event
-
-
-@router.delete("/", response_model=dict)
-async def delete_all_events(db: Session = Depends(get_db)):
-    """
-    Delete all events from the database.
-    """
-    try:
-        db.query(Event).delete()
-        db.commit()
-        return {"message": "All events have been deleted successfully."}
-    except Exception as e:
-        db.rollback()
-        raise HTTPException(status_code=500, detail=f"Failed to delete events: {str(e)}")

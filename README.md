@@ -1,7 +1,7 @@
 
 # Calendar-Events
 
-An application to create and retrieve event details
+An application to create, retrieve and manage event details
 
 ## Steps to run the application:
 The application can be run with any of the below method:
@@ -28,3 +28,27 @@ The above command launches the application in detached mode with a rebuild of th
 3. **Consider Way 2** for production environments where data durability is essential, while Way 1 might suit short-term or testing scenarios.
 
 ![Docker Vs Docker Compose](images/dockerVScompose.png)
+
+## API Documentation
+The API documentation for this application is available via Swagger UI. Once the application is running, you can access it at the following URL:
+
+[http://localhost:8000/docs](http://localhost:8000/docs)
+
+This provides a user-friendly interface to explore and test the application's APIs.
+
+## Available Endpoints
+
+1. **Create Event**
+   - **Endpoint**: `POST /`
+   - **Description**: Creates a new event and returns the event details.
+   - **Response**: `201 Created` with the event details.
+
+2. **Get Events**
+   - **Endpoint**: `GET /`
+   - **Description**: Retrieves a list of events, optionally filtered by query parameters.
+   - **Response**: A list of event details.
+
+3. **Get Event by ID**
+   - **Endpoint**: `GET /{event_id}`
+   - **Description**: Retrieves the details of a specific event by its ID.
+   - **Response**: The details of the requested event.
