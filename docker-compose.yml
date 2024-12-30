@@ -10,6 +10,11 @@ services:
       - ./app/db:/app/db  # Persist SQLite database in a mapped directory
     ports:
       - "8000:8000"  # Expose the container's port to the host
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"  # 50% of one CPU
+          memory: "128M"  # 128MB of memory
 
 volumes:
   db:  # Declare the named volume

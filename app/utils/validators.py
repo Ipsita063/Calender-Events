@@ -1,4 +1,6 @@
 from datetime import datetime
+from sqlalchemy.orm import Session
+from app.models.event import Event
 
 
 def validate_time_format(time_str: str, expected_format: str = "%Y-%m-%dT%H:%M:%S") -> datetime:
@@ -37,3 +39,6 @@ def validate_time_range(from_time: str, to_time: str, format: str = "%Y-%m-%dT%H
     to_dt = validate_time_format(to_time, format)
     if from_dt > to_dt:
         raise ValueError("'from_time' should be less than 'to_time'")
+
+def check_event_exists(event_id: int, db: Session) -> bool:
+    return db.query(Event).filter(Event.id == event_id).first() is not None
