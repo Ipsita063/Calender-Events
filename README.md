@@ -1,7 +1,7 @@
 
 # Calendar-Events
 
-An application to create, retrieve and manage event details
+An application to create and retrieve event details
 
 ## Steps to run the application:
 The application can be run with any of the below method:
@@ -38,17 +38,19 @@ This provides a user-friendly interface to explore and test the application's AP
 
 ## Available Endpoints
 
+All endpoints are available under the base path `/events`.
+
 1. **Create Event**
-   - **Endpoint**: `POST /`
+   - **Endpoint**: `POST /events/`
    - **Description**: Creates a new event and returns the event details.
    - **Response**: `201 Created` with the event details.
 
 2. **Get Events**
-   - **Endpoint**: `GET /`
+   - **Endpoint**: `GET /events/`
    - **Description**: Retrieves a list of events, optionally filtered by query parameters.
    - **Response**: A list of event details.
 
 3. **Get Event by ID**
-   - **Endpoint**: `GET /{event_id}`
+   - **Endpoint**: `GET /events/{event_id}`
    - **Description**: Retrieves the details of a specific event by its ID.
    - **Response**: The details of the requested event.
